@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi negrita</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe4e1;
+        }
+
+        #container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #initialText, #question, #finalMessage {
+            display: none;
+        }
+
+        #initialText {
+            display: block;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-continue {
+            background-color: #ff69b4;
+            color: white;
+        }
+
+        .btn-yes {
+            background-color: #32cd32;
+            color: white;
+        }
+
+        .btn-no {
+            background-color: #ff4500;
+            color: white;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="initialText">
+            <h1>Hola mi negrita, quiero decirte algo muy especial:</h1>
+            <p>
+                🌟 Desde el primer momento en que te vi 🌟, algo dentro de mí cambió. Nunca había sentido esto antes, y contigo todo se siente diferente, más especial, más real. ✨💖 Cada mirada 👀, cada risa tuya, cada momento que compartimos 🫂, me hace darme cuenta de lo increíblemente afortunado que soy por tenerte en mi vida.
+
+                Tú no eres solo importante para mí, eres TODO . 🌍❤️ Mi inspiración para ser mejor 💪, mi refugio cuando las cosas no van bien ☔💫, mi razón para sonreír incluso en los días más complicados. 🌈💜 No hay palabras que puedan describir lo mucho que significas para mí.
+
+                Quiero que sepas que haría cualquier cosa por verte feliz 😊💕, por verte cumplir tus sueños 🌟🎯, por verte brillar como lo haces siempre ✨👸. Porque tu felicidad es mi prioridad 🔝, y quiero ser quien te apoye 🤝, quien te cuide 🛡️ y quien esté a tu lado en cada paso de este camino.
+
+                No necesito grandes cosas 🎁, porque contigo tengo todo lo que siempre he buscado. 💕🏡 Eres mi hogar, mi calma y mi aventura 🌄, todo al mismo tiempo. Estoy aquí para ti, hoy y siempre, dispuesto a darlo todo porque lo que siento por ti es más grande que cualquier cosa que haya conocido. 🌊❤️
+
+                Solo quiero que sepas que mi corazón ❤️, mi tiempo ⏳, mis ganas 🔥… TODO, TODO es tuyo. 🫶 Porque tú eres mi persona especial, la que quiero en mi vida para siempre. 💍✨
+            </p>
+            <button class="btn-continue" onclick="showQuestion()">Continuar</button>
+        </div>
+        <div id="question">
+            <h2>¿Te gustaría ser mi novia? 💖</h2>
+            <button class="btn-yes" onclick="showFinalMessage()">Sí</button>
+            <button class="btn-no" onmouseover="moveNoButton(this)">No</button>
+        </div>
+        <div id="finalMessage">
+            <h1>Gracias por decir que sí, mi amor ❤️</h1>
+            <p>
+                Ahora quiero que sepas también que voy a dar lo mejor de mí para que esto funcione.
+                Juntos podemos con todo, y haré lo posible por hacerte la persona más feliz del mundo. 🥰✨
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function showQuestion() {
+            document.getElementById('initialText').style.display = 'none';
+            document.getElementById('question').style.display = 'block';
+        }
+
+        function showFinalMessage() {
+            document.getElementById('question').style.display = 'none';
+            document.getElementById('finalMessage').style.display = 'block';
+        }
+
+        function moveNoButton(button) {
+            button.style.position = 'absolute';
+            button.style.top = Math.random() * (window.innerHeight - 50) + 'px';
+            button.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+        }
+    </script>
+</body>
+</html>
